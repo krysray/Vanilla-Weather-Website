@@ -38,5 +38,6 @@ function displayTemperature(response) {
 }
 
 let apiKey = "fdd1b815bdd72f1a9884d14d1e552651";
+let city = "Anaheim";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New York&appid=${apiKey}&units=imperial`;
 axios.get(apiUrl).then(displayTemperature);
