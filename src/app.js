@@ -43,7 +43,20 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-let apiKey = "fdd1b815bdd72f1a9884d14d1e552651";
-let city = "Anaheim";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New York&appid=${apiKey}&units=imperial`;
-axios.get(apiUrl).then(displayTemperature);
+function search(city) {
+  let apiKey = "fdd1b815bdd72f1a9884d14d1e552651";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New York&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+  //console.log(cityInputElement.value);
+}
+
+search("Anaheim");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
