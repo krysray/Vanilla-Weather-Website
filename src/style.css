@@ -12,11 +12,12 @@ ul {
   margin: 0;
   padding: 0;
 }
+
 li {
+  list-style: none;
   color: rgb(135, 135, 135);
   font-weight: 100;
   line-height: 19.2px;
-  list-style: none;
   margin: 0;
   padding: 0;
   text-align: left;
